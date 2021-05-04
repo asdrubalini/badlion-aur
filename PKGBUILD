@@ -7,12 +7,12 @@ pkgdesc="Minecraft PvP client with integrated anticheat made by Badlion"
 arch=('x86_64')
 url="https://client-updates.badlion.net/BadlionClient"
 license=('unknown')
-_desktop_name="@badlionnative-desktop.desktop"
+_desktop_name="BadlionClient.desktop"
 options=(!strip)
 
 _filename="BadlionClient"
 source_x86_64=("https://client-updates.badlion.net/${_filename}")
-sha256sums_x86_64=("2606db7df5d00e9f7844a8958fff0030a5c2067bc8486778ea5bdd585fbef12f")
+sha256sums_x86_64=("SKIP")
 
 prepare() {
     chmod +x "${_filename}"
@@ -33,7 +33,7 @@ package() {
 
     # Desktop file
     install -Dm644 "${srcdir}/squashfs-root/${_desktop_name}" \
-            "${pkgdir}/usr/share/applications/${_desktop_name}.desktop"
+            "${pkgdir}/usr/share/applications/${_desktop_name}"
 
     # Icon images
     install -dm755 "${pkgdir}/usr/share/"
